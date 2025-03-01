@@ -1,15 +1,18 @@
 <html>
     <head>
-        <body>
-            <header>
-                <%-include('navbar')%>
-            </header>
-            <%messages.forEach(message => {%>
-                <p><%=message.user%></p>
-                <p><%=message.text%></p>
-                <p><%=message.added%></p>
-                <a href="/message/<%=message.user%>">See Details</a>
-            <%})%>
-        </body>
+        <link rel="stylesheet" href="index.css">
     </head>
+        <header>
+            <%-include('navbar')%>
+        </header>
+        <body>
+            <div class="messages">
+            <%messages.forEach(message => {%>
+                <div class="message-cont">
+                    <%-include('message', {message:message})%>
+                    <a href="/message/<%=message.user%>">See Details</a>
+                </div>
+            <%})%>
+            </div>
+        </body>
 </html>

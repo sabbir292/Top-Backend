@@ -14,9 +14,10 @@ const postNewMessage = (req, res, next) => {
  
  const viewMessageDetails = (req, res, next) => {
     const userName = req.params.userName
+    console.log(userName)
     let message = messages.find(m => m.user === userName)
     console.log(message)
-    res.render('message', {title: 'message details', messages: message})
+    res.render('messageDetails', {title: 'message details', message: message})
  }
 
 module.exports = {newMessageForm, postNewMessage, viewMessageDetails}
