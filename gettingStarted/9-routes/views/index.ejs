@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>HomePage</title>
+  </head>
+  <body>
+    <%-include('navbar', {links:links})%>
+    <ul>
+      <% users.forEach(user => {%>
+        <%-include('users/user', {user:user})%>
+        <%}) %>
+    </ul>
+    <%-include('footer', {message:message})%>
+  </body>
+</html>
