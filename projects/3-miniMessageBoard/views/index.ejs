@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <body>
+            <header>
+                <%-include('navbar')%>
+            </header>
+            <%messages.forEach(message => {%>
+                <p><%=message.user%></p>
+                <p><%=message.text%></p>
+                <p><%=message.added%></p>
+                <a href="/message/<%=message.user%>">See Details</a>
+            <%})%>
+        </body>
+    </head>
+</html>
