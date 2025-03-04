@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>User Lists</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <main>
+        <%if(locals.users){%>
+            <%users.forEach(user => {%>
+                <div>
+                   Id: <%=user.id%>  Name: <%=user.firstName%> <%=user.lastName%>
+                </div>
+            <%})%>
+        <%}%>
+    </main>
+    <a href="/create">Create a user</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title><%=title%></title>
+</head>
+<body>
+    <main>
+        <title><%=title%></title>
+        <%-include("partials/errors.ejs")%>
+        <form action="/create" method="post">
+            <label for="firstName">FirstName</label>
+            <input type="text" name="firstName" id="firstName" required>
+            <label for="firstName">lastName</label>
+            <input type="text" name="lastName" id="lastName" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/">Back To Home</a>
+    </main>
+</body>
+</html>
