@@ -1,3 +1,4 @@
+const { name } = require("ejs")
 const { use } = require("../routes/userRouter")
 const userStorage = require("../storages/userStorage")
 const {body, validationResult} = require("express-validator")
@@ -94,4 +95,15 @@ exports.userUpdatePost = [
 exports.userDeletePost = (req, res) => {
     userStorage.deleteUser(req.params.id)
     res.redirect("/")
+}
+
+
+exports.userSearchGet = (req, res) => {
+    const {sname, semail} = req.query
+    const user = userStorage.searchUser(sname, semail)
+    console.log(user)
+    res.render("search", {
+        title: "Search Result",
+        user: user
+    })
 }
